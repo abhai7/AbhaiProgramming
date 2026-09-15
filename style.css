@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff9f0;
+    color: #26352b;
+}
+
+nav {
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #214e34;
+    color: white;
+}
+
+nav h2 {
+    color: #fff9f0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+nav a:hover {
+    color: #f2b36d;
+}
+
+.hero {
+    min-height: 500px;
+    padding: 70px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+    color: #214e34;
+}
+
+.hero h1 span {
+    color: #e88b45;
+}
+
+.hero p {
+    max-width: 500px;
+    margin: 20px 0;
+    color: #66736a;
+    font-size: 17px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #3f7d58;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+}
+
+.button:hover {
+    background: #214e34;
+}
+
+.food {
+    font-size: 150px;
+    background: #e8f1e7;
+    padding: 50px;
+    border-radius: 50%;
+}
+
+.title {
+    text-align: center;
+    color: #214e34;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    width: 280px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px #ddd;
+}
+
+.emoji {
+    font-size: 60px;
+    background: #e8f1e7;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 15px 0 8px;
+    color: #214e34;
+}
+
+.card p {
+    color: #66736a;
+    margin-bottom: 15px;
+}
+
+.card strong {
+    color: #e88b45;
+    font-size: 20px;
+}
+
+.about {
+    text-align: center;
+    padding: 80px 20%;
+    margin-top: 60px;
+    background: #e8f1e7;
+}
+
+.about h2 {
+    color: #214e34;
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: #66736a;
+}
+
+.features {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    color: #3f7d58;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #214e34;
+    color: white;
+    margin-top: 50px;
+}
+
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+}
