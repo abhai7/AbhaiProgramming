@@ -1,85 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghar Ko Khana</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bidmandu — bid on Kathmandu's best finds</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-    <nav>
-        <h2>🍲 Ghar Ko Khana</h2>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#about">About</a>
-        </div>
-    </nav>
+  <header class="nav">
+    <div class="brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C69A3E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5a2.12 2.12 0 1 1-3-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91"/></svg>
+      <span>Bidmandu</span>
+    </div>
 
-    <section class="hero" id="home">
-        <div>
-            <h1>Homemade Food,<br><span>Just Like Home.</span></h1>
-            <p>
-                Healthy, affordable and delicious homemade meals
-                made especially for students.
-            </p>
-            <a class="button" href="#menu">View Menu</a>
-        </div>
+    <div class="search-box hide-mobile">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C9C2AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="searchInput" type="text" placeholder="Search live auctions" />
+    </div>
 
-        <div class="food">
-            🍛
+    <button class="btn-brass" id="openSellBtn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+      Sell an item
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow-row">
+          <span class="dot"></span>
+          <span>Closing soonest right now</span>
         </div>
+        <h1>Where Kathmandu's best finds go to the highest bid.</h1>
+        <p>List anything from antique brasswork to a family bike. Bidding runs on the clock —
+          the closer it gets to zero, the livelier it gets.</p>
+      </div>
+
+      <div class="hero-card" id="featuredCard">
+        <!-- filled by script.js -->
+      </div>
     </section>
 
-    <section id="menu">
-        <h2 class="title">Today's Menu</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="emoji">🍛</div>
-                <h3>Dal Bhat Set</h3>
-                <p>Rice, dal, vegetables and achar.</p>
-                <strong>Rs. 180</strong>
-            </div>
-
-            <div class="card">
-                <div class="emoji">🍗</div>
-                <h3>Chicken Meal</h3>
-                <p>Rice, chicken curry and vegetables.</p>
-                <strong>Rs. 250</strong>
-            </div>
-
-            <div class="card">
-                <div class="emoji">🥗</div>
-                <h3>Healthy Veg Set</h3>
-                <p>Rice, dal, vegetables and fresh salad.</p>
-                <strong>Rs. 160</strong>
-            </div>
-
-        </div>
+    <!-- CATEGORY RAIL -->
+    <section class="category-rail" id="categoryRail">
+      <!-- filled by script.js -->
     </section>
 
-    <section class="about" id="about">
-        <h2>Why Ghar Ko Khana?</h2>
-        <p>
-            Ghar Ko Khana connects students with local home cooks.
-            Our goal is to provide fresh, nutritious and affordable
-            food that tastes like a meal prepared at home.
-        </p>
-
-        <div class="features">
-            <span>🥗 Healthy</span>
-            <span>💰 Affordable</span>
-            <span>🏠 Homemade</span>
-        </div>
+    <!-- GRID -->
+    <section class="grid-section">
+      <div class="grid-heading">
+        <h2>Live auctions</h2>
+        <span id="itemCount" class="muted"></span>
+      </div>
+      <div class="items-grid" id="itemsGrid">
+        <!-- filled by script.js -->
+      </div>
+      <div class="empty-state" id="emptyState" hidden>
+        Nothing matches that search. Try another category, or list your own item.
+      </div>
     </section>
 
-    <footer>
-        <p>© 2026 Ghar Ko Khana | Homemade Food for Students</p>
-    </footer>
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+      <h2>How bidding works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-title">List your item</div>
+          <div class="step-desc">Set a starting bid and how long the auction runs, from six hours to three days.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-title">Bids come in</div>
+          <div class="step-desc">Buyers bid against the clock. Each new bid must beat the current one.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-title">Highest bid wins</div>
+          <div class="step-desc">When the timer hits zero, the top bidder wins and you arrange the handover.</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    Bidmandu · a bazaar for auctions, built for Kathmandu
+  </footer>
+
+  <!-- BID MODAL -->
+  <div class="overlay" id="bidOverlay" hidden>
+    <div class="modal">
+      <div class="modal-head">
+        <h3>Place a bid</h3>
+        <button class="icon-btn" id="closeBidModal">&times;</button>
+      </div>
+      <p class="modal-item-title" id="bidItemTitle"></p>
+      <p class="modal-item-meta" id="bidItemMeta"></p>
+      <label class="field-label">Your bid (NPR)</label>
+      <input type="number" id="bidInput" class="field-input" />
+      <div class="field-error" id="bidError"></div>
+      <button class="btn-primary" id="confirmBidBtn">Confirm bid</button>
+    </div>
+  </div>
+
+  <!-- SELL MODAL -->
+  <div class="overlay" id="sellOverlay" hidden>
+    <div class="modal">
+      <div class="modal-head">
+        <h3>List an item</h3>
+        <button class="icon-btn" id="closeSellModal">&times;</button>
+      </div>
+
+      <label class="field-label">Title</label>
+      <input type="text" id="sellTitle" class="field-input" placeholder="e.g. Copper water jug, hand-hammered" />
+
+      <div class="field-row">
+        <div class="field-col">
+          <label class="field-label">Category</label>
+          <select id="sellCategory" class="field-input"></select>
+        </div>
+        <div class="field-col">
+          <label class="field-label">Runs for</label>
+          <select id="sellDuration" class="field-input">
+            <option value="6">6 hours</option>
+            <option value="24" selected>24 hours</option>
+            <option value="48">2 days</option>
+            <option value="72">3 days</option>
+          </select>
+        </div>
+      </div>
+
+      <label class="field-label">Starting bid (NPR)</label>
+      <input type="number" id="sellStartingBid" class="field-input" placeholder="1000" />
+
+      <label class="field-label">Description</label>
+      <textarea id="sellDescription" class="field-input" rows="3" placeholder="Condition, age, and anything a bidder should know."></textarea>
+
+      <div class="field-error" id="sellError"></div>
+      <button class="btn-primary" id="confirmSellBtn">List for bidding</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="script.js"></script>
 </body>
 </html>

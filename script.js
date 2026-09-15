@@ -1,29 +1,59 @@
-function sum(){
-    let number1 = Number(document.getElementById("number1").value);
-    let number2 = Number(document.getElementById("number2").value);
+// Countdown Timer for Featured Card
+let totalSeconds = 37 * 60 + 52;
+const countdownEl = document.getElementById('countdown');
 
-    let answer = number1 + number2;
-
-    document.getElementById("result").innerHTML = answer;
+if (countdownEl) {
+  setInterval(() => {
+    if (totalSeconds > 0) {
+      totalSeconds--;
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      countdownEl.innerText = `${minutes}m ${seconds < 10 ? '0' : ''}${seconds}s left`;
+    }
+  }, 1000);
 }
 
-function subtract(){
+// Category Filter Functionality
+const catButtons = document.querySelectorAll('.cat-btn');
+const auctionCards = document.querySelectorAll('.auction-grid .auction-card');
+const itemsCountEl = document.querySelector('.items-count');
 
-    let number1 = Number(document.getElementById("number1").value);
-    let number2 = Number(document.getElementById("number2").value);
+catButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // 1. Remove active class from all category buttons
+    catButtons.forEach(btn => btn.classList.remove('active'));
+    
+    // 2. Add active class to the clicked category button
+    button.classList.add('active');
 
-    let answer = number1 - number2;
+    // 3. Get selected category name (removes emojis and cleans whitespace)
+    const selectedCategory = button.textContent.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '').trim();
 
-    document.getElementById("result").innerHTML = answer;
+    let visibleCount = 0;
 
-}
+    // 4. Show/Hide cards based on selected category
+    auctionCards.forEach(card => {
+      const cardCategory = card.dataset.category;
 
-function multiply(){
-    let number1 = Number(document.getElementById("number1").value);
-    let number2 = Number(document.getElementById("number2").value);
+      if (selectedCategory === "All lanes" || cardCategory === selectedCategory) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
 
-    let answer = number1 * number2;
+    // 5. Update the item count in the header
+    if (itemsCountEl) {
+      itemsCountEl.textContent = `${visibleCount} item${visibleCount === 1 ? '' : 's'}`;
+    }
+  });
+});
 
-    document.getElementById("result").innerHTML = answer;
-
-}
+// Place a Bid buttons interaction
+const bidButtons = document.querySelectorAll('.btn-bid');
+bidButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    alert('Bid action triggered!');
+  });
+});

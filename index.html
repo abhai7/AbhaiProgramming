@@ -1,85 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghar Ko Khana</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bidmandu - Live Auctions</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <nav>
-        <h2>🍲 Ghar Ko Khana</h2>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#about">About</a>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="logo">
+      <span class="icon">🔨</span>
+      Bidmandu
+    </div>
+
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Search live auctions">
+    </div>
+
+    <button class="btn-sell">+ Sell an item</button>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <div class="hero-container">
+      <div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Closing soonest right now
         </div>
-    </nav>
-
-    <section class="hero" id="home">
-        <div>
-            <h1>Homemade Food,<br><span>Just Like Home.</span></h1>
-            <p>
-                Healthy, affordable and delicious homemade meals
-                made especially for students.
-            </p>
-            <a class="button" href="#menu">View Menu</a>
-        </div>
-
-        <div class="food">
-            🍛
-        </div>
-    </section>
-
-    <section id="menu">
-        <h2 class="title">Today's Menu</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="emoji">🍛</div>
-                <h3>Dal Bhat Set</h3>
-                <p>Rice, dal, vegetables and achar.</p>
-                <strong>Rs. 180</strong>
-            </div>
-
-            <div class="card">
-                <div class="emoji">🍗</div>
-                <h3>Chicken Meal</h3>
-                <p>Rice, chicken curry and vegetables.</p>
-                <strong>Rs. 250</strong>
-            </div>
-
-            <div class="card">
-                <div class="emoji">🥗</div>
-                <h3>Healthy Veg Set</h3>
-                <p>Rice, dal, vegetables and fresh salad.</p>
-                <strong>Rs. 160</strong>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <h2>Why Ghar Ko Khana?</h2>
-        <p>
-            Ghar Ko Khana connects students with local home cooks.
-            Our goal is to provide fresh, nutritious and affordable
-            food that tastes like a meal prepared at home.
+        <h1 class="hero-title">Where Kathmandu's best finds go to the highest bid.</h1>
+        <p class="hero-description">
+          List anything from antique brasswork to a family bike. Bidding runs on the clock — the closer it gets to zero, the livelier it gets.
         </p>
+      </div>
 
-        <div class="features">
-            <span>🥗 Healthy</span>
-            <span>💰 Affordable</span>
-            <span>🏠 Homemade</span>
+      <!-- Featured Hero Card -->
+      <div class="hero-card">
+        <div class="hero-card-icon">🏺</div>
+        <div>
+          <div class="card-category">Antiques</div>
+          <h2 class="hero-card-title">Vintage brass telescope</h2>
+          
+          <div class="card-stats">
+            <span>Current bid</span>
+            <span>14 bids</span>
+          </div>
+
+          <div class="price-hero">Rs 8,500</div>
+
+          <div class="timer">
+            <span class="timer-icon">⏳</span>
+            <span id="countdown">37m 52s left</span>
+          </div>
+
+          <button class="btn-bid">Place a bid</button>
         </div>
+      </div>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="categories-bar">
+      <button class="cat-btn active">All lanes</button>
+      <button class="cat-btn">💻 Electronics</button>
+      <button class="cat-btn">🎨 Thangka & Art</button>
+      <button class="cat-btn">💎 Jewelry & Gems</button>
+      <button class="cat-btn">🏍️ Vehicles</button>
+      <button class="cat-btn">📚 Rare Books</button>
+      <button class="cat-btn">🏺 Antiques</button>
+    </div>
+
+    <!-- Live Auctions Header -->
+    <div class="section-header">
+      <h2 class="section-title">Live auctions</h2>
+      <span class="items-count">6 items</span>
+    </div>
+
+    <!-- Live Auctions Grid -->
+    <div class="auction-grid">
+      <!-- Item 1 -->
+      <div class="auction-card" data-category="Thangka & Art">
+        <div class="card-top">
+          <span class="tag">Thangka & Art</span>
+          <div class="card-center-icon">🎨</div>
+        </div>
+        <div class="card-body">
+          <h3 class="item-title">Hand-painted Avalokiteshvara thangka</h3>
+          <p class="item-description">24×18 inch thangka, natural mineral pigments, gold detailing on the lotus throne.</p>
+          <div class="card-footer">
+            <div>
+              <div class="bid-meta">Current bid</div>
+              <div class="item-price">Rs 32,000</div>
+            </div>
+            <div class="bids-count">21 bids</div>
+          </div>
+          <div class="card-timer">
+            <span>⏱️ 2h 21m left</span>
+          </div>
+          <button class="btn-bid">Place a bid</button>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="auction-card" data-category="Electronics">
+        <div class="card-top">
+          <span class="tag">Electronics</span>
+          <div class="card-center-icon">📷</div>
+        </div>
+        <div class="card-body">
+          <h3 class="item-title">Refurbished DSLR camera kit</h3>
+          <p class="item-description">Body, two lenses, and a carry bag. Shutter count under 12,000, well maintained.</p>
+          <div class="card-footer">
+            <div>
+              <div class="bid-meta">Current bid</div>
+              <div class="item-price">Rs 41,500</div>
+            </div>
+            <div class="bids-count">9 bids</div>
+          </div>
+          <div class="card-timer">
+            <span>⏱️ 5h 45m left</span>
+          </div>
+          <button class="btn-bid">Place a bid</button>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="auction-card" data-category="Jewelry & Gems">
+        <div class="card-top">
+          <span class="tag">Jewelry & Gems</span>
+          <div class="card-center-icon">💎</div>
+        </div>
+        <div class="card-body">
+          <h3 class="item-title">Turquoise and coral necklace</h3>
+          <p class="item-description">Traditional tibetan-style silver necklace, inlaid turquoise and coral beads.</p>
+          <div class="card-footer">
+            <div>
+              <div class="bid-meta">Current bid</div>
+              <div class="item-price">Rs 15,200</div>
+            </div>
+            <div class="bids-count">27 bids</div>
+          </div>
+          <div class="card-timer">
+            <span>⏱️ 6h 12m left</span>
+          </div>
+          <button class="btn-bid">Place a bid</button>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="auction-card" data-category="Vehicles">
+        <div class="card-top">
+          <span class="tag">Vehicles</span>
+          <div class="card-center-icon">🏍️</div>
+        </div>
+        <div class="card-body">
+          <h3 class="item-title">1998 Royal Enfield Bullet</h3>
+          <p class="item-description">Restored engine, new paint, papers up to date. Runs smooth on the ring road.</p>
+          <div class="card-footer">
+            <div>
+              <div class="bid-meta">Current bid</div>
+              <div class="item-price">Rs 1,85,000</div>
+            </div>
+            <div class="bids-count">6 bids</div>
+          </div>
+          <div class="card-timer">
+            <span>⏱️ 1d 3h left</span>
+          </div>
+          <button class="btn-bid">Place a bid</button>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="auction-card" data-category="Rare Books">
+        <div class="card-top">
+          <span class="tag">Rare Books</span>
+          <div class="card-center-icon">📚</div>
+        </div>
+        <div class="card-body">
+          <h3 class="item-title">First-edition Nepali poetry set</h3>
+          <p class="item-description">Three-volume first-edition set, dust jackets intact, from a private Kathmandu collection.</p>
+          <div class="card-footer">
+            <div>
+              <div class="bid-meta">Current bid</div>
+              <div class="item-price">Rs 4,200</div>
+            </div>
+            <div class="bids-count">11 bids</div>
+          </div>
+          <div class="card-timer">
+            <span>⏱️ 8h 58m left</span>
+          </div>
+          <button class="btn-bid">Place a bid</button>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="auction-card" data-category="Antiques">
+        <div class="card-top">
+          <span class="tag">Antiques</span>
+          <div class="card-center-icon">🏛️</div>
+        </div>
+        <div class="card-body">
+          <h3 class="item-title">Carved wooden window frame</h3>
+          <p class="item-description">Reclaimed Newari tundal window frame, original 19th-century carving.</p>
+          <div class="card-footer">
+            <div>
+              <div class="bid-meta">Current bid</div>
+              <div class="item-price">Rs 22,000</div>
+            </div>
+            <div class="bids-count">8 bids</div>
+          </div>
+          <div class="card-timer">
+            <span>⏱️ 13h 58m left</span>
+          </div>
+          <button class="btn-bid">Place a bid</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- How Bidding Works Section -->
+    <section class="how-it-works">
+      <h2 class="section-title">How bidding works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3 class="step-title">List your item</h3>
+          <p class="step-desc">Set a starting bid and how long the auction runs, from six hours to three days.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3 class="step-title">Bids come in</h3>
+          <p class="step-desc">Buyers bid against the clock. Each new bid must beat the current one.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3 class="step-title">Highest bid wins</h3>
+          <p class="step-desc">When the timer hits zero, the top bidder wins and you arrange the handover.</p>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <p>© 2026 Ghar Ko Khana | Homemade Food for Students</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    Bidmandu · a bazaar for auctions, built for Kathmandu
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
