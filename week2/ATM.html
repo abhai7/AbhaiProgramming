@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM System</title>
+</head>
+<body>
+
+    <h1>ATM System</h1>
+
+    <h3>Enter PIN</h3>
+
+    <input type="password" id="pin" placeholder="Enter PIN">
+    <button onclick="atm('login')">Login</button>
+
+    <br><br>
+
+    <input type="number" id="amount" placeholder="Enter amount">
+
+    <br><br>
+
+    <button onclick="atm('withdraw')">Withdraw</button>
+    <button onclick="atm('deposit')">Deposit</button>
+    <button onclick="atm('balance')">Check Balance</button>
+
+    <h2 id="screen">Please enter your PIN</h2>
+
+    <script src="ATM.js"></script>
+
+</body>
+</html>
+
