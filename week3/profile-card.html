@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eeeeee;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .profile-card {
+            width: 300px;
+            margin: auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px gray;
+        }
+
+        .profile-card img.profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #qrCode {
+            display: none;
+            margin-top: 15px;
+        }
+
+        #qrCode img {
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+<div class="profile-card" id="profileCard">
+
+        <img 
+            class="profile" 
+            src="https://cdn.phototourl.com/free/2026-09-21-dcd2fc15-77fc-4771-b6c8-898bc1d3ee1a.png"
+            alt="Profile Image"
+        >
+
+        <h2 id="displayName">Your Name</h2>
+        <p id="displayAddress">Your Address</p>
+
+        <input 
+            type="text" 
+            id="name" 
+            placeholder="Enter your name"
+        >
+
+        <input 
+            type="text" 
+            id="address" 
+            placeholder="Enter your address"
+        >
+
+        <input
+            type="text"
+            id="qrText"
+            placeholder="QR text or link"
+            value="Name: Your Name | Address: Your Address"
+        >
+
+        <br>
+
+        <button id="qrButton">
+            Show QR Code
+        </button>
+
+        <div id="qrCode">
+            <img 
+                id="qrImage"
+                src=""
+                alt="QR Code"
+            >
+        </div>
+
+    </div>
+    <script>
+
+$(document).ready(function() {
+
+    function updateQrCode() {
+        let name = $("#name").val().trim() || "Your Name";
+        let address = $("#address").val().trim() || "Your Address";
+        let qrValue = $("#qrText").val().trim();
+
+        if (!qrValue) {
+            qrValue = "Name: " + name + " | Address: " + address;
+            $("#qrText").val(qrValue);
+        }
+
+        const apiUrl = "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=" + encodeURIComponent(qrValue);
+        $("#qrImage").attr("src", apiUrl);
+    }
+
+    // Update name and address
+    $("#name").change(function() {
+        $("#displayName").text($(this).val() || "Your Name");
+        $("#profileCard").css("background-color", "lightblue");
+        updateQrCode();
+    });
+
+    $("#address").change(function() {
+        $("#displayAddress").text($(this).val() || "Your Address");
+        $("#profileCard").css("background-color", "lightblue");
+        updateQrCode();
+    });
+
+    $("#qrText").on("input", function() {
+        updateQrCode();
+    });
+
+    // Show and hide QR code
+    $("#qrButton").click(function() {
+        updateQrCode();
+        $("#qrCode").toggle();
+    });
+
+    updateQrCode();
+
+});
+
+</script>
+</body>
+</html>

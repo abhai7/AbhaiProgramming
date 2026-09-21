@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Box Animation</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-bottom: 15px;
+        }
+
+        .container {
+            width: 450px;
+            height: 300px;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        #box {
+            width: 60px;
+            height: 60px;
+            background: blue;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="start">Start Animation</button>
+
+    <div class="container">
+        <div id="box"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#start").click(function () {
+
+                $("#box")
+                    .animate({ top: "250px" }, 1000, function () {
+                        $(this).css("background", "red");
+                    })
+
+                    .animate({ left: "400px" }, 1000, function () {
+                        $(this).css("background", "yellow");
+                    })
+
+                    .animate({ top: "0px" }, 1000, function () {
+                        $(this).css("background", "purple");
+                    })
+
+                    .animate({ left: "0px" }, 1000, function () {
+                        $(this).css("background", "green");
+                    });
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

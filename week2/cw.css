@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 30px;
+}
+
+#profile-card {
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#student-name {
+    color: #333;
+}
+
+#profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#profile-photo.rounded {
+    border-radius: 50%;
+}
+
+#profile-photo.shadow {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+#student-bio {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+#skills-list {
+    list-style-position: inside;
+    padding: 10px;
+}
+
+#nickname-input {
+    padding: 10px;
+    width: 250px;
+    max-width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#output {
+    min-height: 40px;
+    margin: 15px 0;
+    padding: 12px;
+    background-color: #eee;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Highlight class */
+.highlighted {
+    border: 5px solid gold;
+}
+
+/* Dark mode class */
+.dark-mode {
+    background-color: #222 !important;
+    color: white;
+}
+
+.dark-mode #student-name {
+    color: white;
+}
+
+.dark-mode #student-bio {
+    background-color: #333;
+}
+
+.dark-mode #output {
+    background-color: #444;
+    color: white;
+}
+
+/* Rounded class */
+.rounded {
+    border-radius: 50% !important;
+}
